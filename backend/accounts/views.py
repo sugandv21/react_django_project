@@ -1,4 +1,3 @@
-# accounts/views.py
 from rest_framework import generics, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -28,3 +27,4 @@ class LoginView(APIView):
 
         token, _ = Token.objects.get_or_create(user=user)
         return Response({"token": token.key, "username": user.username})
+
