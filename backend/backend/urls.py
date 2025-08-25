@@ -35,8 +35,9 @@ urlpatterns = [
     path("api/register/", RegisterView.as_view(), name="register"),
     path("api/login/", LoginView.as_view(), name="login"),
     path("api/contact/", ContactView.as_view(), name="contact"),
-    path("api/users/", UsersListView.as_view(), name="users-list"),        # GET users
-    path("api/contacts/", ContactListView.as_view(), name="contacts-list"), # GET contacts
+    path("api/users/", UsersListView.as_view(), name="users-list"),        
+    path("api/contacts/", ContactListView.as_view(), name="contacts-list"), 
 ]
+
 
 
