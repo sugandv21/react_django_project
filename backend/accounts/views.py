@@ -7,8 +7,8 @@ from django.contrib.auth import authenticate
 from .models import User
 from .serializers import RegisterSerializer
 
-# Registration view
-class RegisterView(generics.CreateAPIView):
+# Registration view (POST to create, GET to list users)
+class RegisterView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
