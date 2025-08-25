@@ -12,6 +12,7 @@ class RegisterView(generics.ListCreateAPIView):
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
 
+
 # Login view
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -26,5 +27,8 @@ class LoginView(APIView):
             return Response({"error": "Invalid email or password"}, status=400)
 
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({"token": token.key, "username": user.username})
-
+        return Response({
+            "token": token.key,
+            "username": user.username,
+            "email": user.email
+        })
