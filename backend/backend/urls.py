@@ -27,16 +27,16 @@ Including another URLconf
 # ]
 from django.contrib import admin
 from django.urls import path
-from accounts.views import RegisterView, LoginView   # removed UsersListView
-from contact.views import ContactView, ContactListView
+from accounts.views import RegisterView, LoginView
+from contact.views import ContactView   
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/register/", RegisterView.as_view(), name="register"),
     path("api/login/", LoginView.as_view(), name="login"),
-    path("api/contact/", ContactView.as_view(), name="contact"),
-    path("api/contacts/", ContactListView.as_view(), name="contacts-list"),
+    path("api/contact/", ContactView.as_view(), name="contact"),  
 ]
+
 
 
 
