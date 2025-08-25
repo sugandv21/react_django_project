@@ -1,10 +1,10 @@
-# contact/admin.py
 from django.contrib import admin
-from .models import Contact
+from django.contrib.auth.admin import UserAdmin
+from .models import User
 
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone', 'created_at') 
-    search_fields = ('name', 'email', 'phone')  
-    list_filter = ('created_at',)  
-    ordering = ('-created_at',) 
+@admin.register(User)
+class CustomUserAdmin(UserAdmin):
+    list_display = ('username', 'email', 'is_staff', 'is_active')
+    list_filter = ('is_staff', 'is_superuser', 'is_active')
+    search_fields = ('username', 'email')
+    ordering = ('email',)
