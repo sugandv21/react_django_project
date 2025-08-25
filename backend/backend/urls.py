@@ -27,7 +27,7 @@ Including another URLconf
 # ]
 from django.contrib import admin
 from django.urls import path
-from accounts.views import RegisterView, LoginView, UsersListView
+from accounts.views import RegisterView, LoginView   # removed UsersListView
 from contact.views import ContactView, ContactListView
 
 urlpatterns = [
@@ -35,9 +35,10 @@ urlpatterns = [
     path("api/register/", RegisterView.as_view(), name="register"),
     path("api/login/", LoginView.as_view(), name="login"),
     path("api/contact/", ContactView.as_view(), name="contact"),
-    path("api/users/", UsersListView.as_view(), name="users-list"),        
-    path("api/contacts/", ContactListView.as_view(), name="contacts-list"), 
+    path("api/contacts/", ContactListView.as_view(), name="contacts-list"),
 ]
+
+
 
 
 
