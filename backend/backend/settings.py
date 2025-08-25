@@ -143,7 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://68ac3d056df1127e2b2611bc--sugan21.netlify.app",
+    "https://sugan21.netlify.app",
 ]
+
 
 # -----------------------------
 # EMAIL CONFIGURATION (GMAIL)
@@ -154,5 +157,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "suganyasdv16@gmail.com"       
 EMAIL_HOST_PASSWORD = "duczripxqitpjvbu"         
+
 
 
